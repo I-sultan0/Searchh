@@ -22,7 +22,13 @@ const SearchResults = ({ fetchedData, loader }) => {
   //   console.log(fetchedData);
   return (
     <>
-      <Box id="exercises" sx={{ mt: { lg: "40px" } }} mt="50px" p="20px">
+      <Box
+        id="exercises"
+        sx={{ mt: { lg: "40px" }, width: { lg: "80%", sm: "85%", xs: "95%" } }}
+        m="50px auto"
+        p="20px"
+        // border="1px solid black"
+      >
         {loader && (
           <div className="lds-roller">
             <div></div>
@@ -37,7 +43,7 @@ const SearchResults = ({ fetchedData, loader }) => {
         )}
         <Stack
           direction="row"
-          sx={{ gap: { lg: "60px", xs: "50px" } }}
+          sx={{ gap: { lg: "40px", xs: "50px" } }}
           flexWrap="wrap"
           justifyContent="center"
         >

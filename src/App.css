@@ -1,11 +1,16 @@
 body {
-  background: rgb(164, 160, 230);
-  background: linear-gradient(
+  background-color: white;
+  /* background: rgb(164, 160, 230); */
+  /* background: linear-gradient(
     90deg,
     rgba(164, 160, 230, 1) 0%,
     rgba(224, 144, 223, 1) 35%,
     rgba(104, 122, 250, 1) 100%
-  );
+  ); */
+}
+* {
+  margin: 0;
+  padding: 0;
 }
 
 .lds-roller {
@@ -25,7 +30,7 @@ body {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #fff;
+  background: linear-gradient(91.52deg, #1eb9b3 2.19%, #1bb5ad 105.27%);
   margin: -4px 0 0 -4px;
 }
 .lds-roller div:nth-child(1) {

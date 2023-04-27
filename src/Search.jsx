@@ -13,12 +13,12 @@ const Search = () => {
       title: "Please type atleast 3 characters to get the Search Results",
     },
   ];
-  // const loading = [
-  //   {
-  //     id: "Loading",
-  //     title: "Please Wait...",
-  //   },
-  // ];
+  const noData = [
+    {
+      id: "No Data Found",
+      title: "Try Something Else (like - 'tem')",
+    },
+  ];
 
   const searchValue = async (e) => {
     const userInput = e.target.value.toLowerCase();
@@ -48,6 +48,9 @@ const Search = () => {
         setTimeout(() => {
           setLoader(false);
           setShowData(filterData);
+          if (filterData.length === 0) {
+            setShowData(noData);
+          }
         }, 1500);
         setTimeout(() => {
           localStorage.removeItem("API-Data");
@@ -74,6 +77,9 @@ const Search = () => {
       });
       setLoader(false);
       setShowData(filterData);
+      if (filterData.length === 0) {
+        setShowData(noData);
+      }
     };
 
     if (e.target.value === "") {
@@ -87,34 +93,48 @@ const Search = () => {
       alignItems="center"
       justifyContent="center"
       textAlign="center"
-      sx={{
-        width: { lg: "70%", sm: "85%", xs: "95%" },
-      }}
+      // sx={{
+      //   width: { lg: "70%", sm: "85%", xs: "95%" },
+      // }}
+      width="100%"
     >
-      <Typography
+      <Box
+        // border="1px solid black"
+        pb="25px"
         sx={{
-          mb: "25px",
-          fontSize: "28px",
-          borderRadius: "20px",
-          textTransform: "capitalize",
-          fontWeight: "bold",
+          background:
+            "linear-gradient(91.52deg, #1EB9B3 2.19%, #1BB5AD 105.27%)",
         }}
       >
-        Search
-      </Typography>
-      <TextField
-        height="76px"
-        sx={{
-          input: { fontWeight: "700", border: "none", borderRadius: "4px" },
-          width: { lg: "800px", sm: "500px", xs: "320px" },
-          backgroundColor: "#fff",
-          borderRadius: "40px",
-        }}
-        // value={search}
-        onChange={searchValue}
-        placeholder="Search..."
-        type="text"
-      />
+        <Typography
+          sx={{
+            mb: "25px",
+            pt: "20px",
+            fontSize: "28px",
+            borderRadius: "20px",
+            textTransform: "capitalize",
+            fontWeight: "bold",
+            color: "white",
+            fontFamily: ["Poppins", "sans-serif"],
+          }}
+        >
+          Quickly Find What You Need: Search Here
+        </Typography>
+        <TextField
+          height="56px"
+          mb="15px"
+          sx={{
+            input: { fontWeight: "700", border: "none", borderRadius: "8px" },
+            width: { lg: "800px", sm: "500px", xs: "320px" },
+            backgroundColor: "#fff",
+            borderRadius: "8px",
+          }}
+          // value={search}
+          onChange={searchValue}
+          placeholder="Search..."
+          type="text"
+        />
+      </Box>
 
       <SearchResults fetchedData={showData} loader={loader} />
     </Box>
