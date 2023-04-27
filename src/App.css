@@ -1,16 +1,10 @@
 body {
   background-color: white;
-  /* background: rgb(164, 160, 230); */
-  /* background: linear-gradient(
-    90deg,
-    rgba(164, 160, 230, 1) 0%,
-    rgba(224, 144, 223, 1) 35%,
-    rgba(104, 122, 250, 1) 100%
-  ); */
 }
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .lds-roller {

@@ -19,7 +19,7 @@ const SearchResults = ({ fetchedData, loader }) => {
   const paginate = (event, value) => {
     setCurrentPage(value);
   };
-  //   console.log(fetchedData);
+
   return (
     <>
       <Box
@@ -27,7 +27,6 @@ const SearchResults = ({ fetchedData, loader }) => {
         sx={{ mt: { lg: "40px" }, width: { lg: "80%", sm: "85%", xs: "95%" } }}
         m="50px auto"
         p="20px"
-        // border="1px solid black"
       >
         {loader && (
           <div className="lds-roller">

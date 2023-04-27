@@ -16,7 +16,6 @@ const ResultCard = ({ currentData }) => {
       <Typography
         sx={{
           mt: "8px",
-          // p: "8px",
           fontSize: "20px",
           borderRadius: "20px",
           textTransform: "capitalize",

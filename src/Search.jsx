@@ -93,13 +93,9 @@ const Search = () => {
       alignItems="center"
       justifyContent="center"
       textAlign="center"
-      // sx={{
-      //   width: { lg: "70%", sm: "85%", xs: "95%" },
-      // }}
       width="100%"
     >
       <Box
-        // border="1px solid black"
         pb="25px"
         sx={{
           background:
@@ -129,7 +125,6 @@ const Search = () => {
             backgroundColor: "#fff",
             borderRadius: "8px",
           }}
-          // value={search}
           onChange={searchValue}
           placeholder="Search..."
           type="text"
